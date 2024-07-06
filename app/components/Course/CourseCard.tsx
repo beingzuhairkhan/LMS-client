@@ -5,8 +5,9 @@ import { AiOutlineUnorderedList } from 'react-icons/ai';
 import Ratings from "../../utils/Ratings";
 
 type Props = {
-  item: any;
-  isProfile: boolean;
+  item?: any;
+  isProfile?: boolean;
+  user?:any
 };
 
 const CourseLink: React.FC<Props> = ({ item, isProfile }) => (

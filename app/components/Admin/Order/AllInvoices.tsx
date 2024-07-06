@@ -1,5 +1,5 @@
 import React, { FC, useState, useEffect } from 'react';
-import { DataGrid, GridToolbar } from "@mui/x-data-grid";
+import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import { Box } from "@mui/material";
 import { useGetAllCoursesQuery } from "@/redux/features/courses/coursesAPI";
 import { useGetAllUsersQuery } from "@/redux/features/user/userApi";
@@ -13,23 +13,23 @@ type Props = {
 }
 
 const AllInvoices: FC<Props> = ({ isDashboard }) => {
-    const { isLoading: ordersLoading, data } = useGetAllOrdersQuery({});
+    const { isLoading: ordersLoading, data: ordersData } = useGetAllOrdersQuery({});
     const { data: usersData } = useGetAllUsersQuery({});
     const { data: coursesData } = useGetAllCoursesQuery({});
     const [orderData, setOrderData] = useState<any[]>([]);
 
     useEffect(() => {
-        if (data) {
-            const temp = data.orders?.map((item: any) => {
-                const user = usersData?.users.find(
+        if (ordersData && usersData && coursesData) {
+            const temp = ordersData.orders?.map((item: any) => {
+                const user = usersData.users.find(
                     (user: any) => user._id === item.userId
                 );
-                const course = coursesData?.courses.find(
+                const course = coursesData.courses.find(
                     (course: any) => course._id === item.courseId
                 );
 
                 return {
-                   ...item ,
+                    id: item._id, // Make sure to provide a unique id for each row
                     userName: user?.name || '',
                     userEmail: user?.email || '',
                     title: course?.name || '',
@@ -37,14 +37,11 @@ const AllInvoices: FC<Props> = ({ isDashboard }) => {
                     created_at: format(item.createdAt)
                 };
             });
-            setOrderData(temp );
+            setOrderData(temp || []);
         }
-    }, [data, usersData, coursesData]);
-    console.log("orderData" , data)
-    console.log("userData" , usersData)
-    console.log("CoursesData" , coursesData)
+    }, [ordersData, usersData, coursesData]);
 
-    const columns: any = [
+    const columns: GridColDef[] = [
         { field: 'id', headerName: 'ID', flex: 0.3 },
         { field: 'userName', headerName: 'Name', flex: isDashboard ? 0.6 : 0.5 },
         ...(isDashboard ? [] : [
@@ -67,7 +64,9 @@ const AllInvoices: FC<Props> = ({ isDashboard }) => {
         ])
     ];
 
-
+    if (ordersLoading) {
+        return <Loader />;
+    }
 
     return (
         <Box m={isDashboard ? "0" : '40px'}>
@@ -86,14 +85,11 @@ const AllInvoices: FC<Props> = ({ isDashboard }) => {
                     '& .MuiCheckbox-root': { color: (theme) => theme.palette.mode === 'dark' ? '#b7ebde !important' : '#000 !important' },
                     '& .MuiDataGrid-toolbarContainer .MuiButton-text': { color: '#fff !important' },
                 }}>
-
                 <DataGrid
                     rows={orderData}
                     columns={columns}
                     checkboxSelection={!isDashboard}
-                    components={isDashboard ? {} : { Toolbar: GridToolbar }}
                 />
-
             </Box>
         </Box>
     );

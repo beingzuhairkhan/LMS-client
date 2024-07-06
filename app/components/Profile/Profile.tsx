@@ -11,7 +11,7 @@ import { useGetUsersAllCoursesQuery } from '@/redux/features/courses/coursesAPI'
 import CourseCard from '../../components/Course/CourseCard';
 
 type Props = {
-  user: any;
+  user?: any;
   
 };
 

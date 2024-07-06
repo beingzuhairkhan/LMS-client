@@ -1,7 +1,13 @@
 import React ,{FC , useState , useEffect} from 'react'
 import {useGetUsersAllCoursesQuery} from "@/redux/features/courses/coursesAPI"
 import CourseCard from "../Course/CourseCard"
-type Props ={}
+interface Course {
+   id: string;
+   name: string;
+   description: string;
+   // Add more properties as needed
+}
+
 
 const Courses = () =>{
     const {data , isLoading } = useGetUsersAllCoursesQuery({})

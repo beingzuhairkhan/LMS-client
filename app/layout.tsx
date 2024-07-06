@@ -28,12 +28,6 @@ const josefin = Josefin_Sans({
   variable: "--font-Josefin",
 });
 
-// export const metadta:Metadata = {
-//   title: "Garuda Institute",
-//   icons: {
-//     icon: 
-//   },
-// };
 
 export default function RootLayout({
   children,
@@ -43,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <head>
-        {/* <link rel="icon" href="icon" /> */}
+  
   
       </head>
       <body className={`${poppins.variable} ${josefin.variable} !bg-white  bg-no-repeat dark:bg-gradient-to-b dark:from-gray-900 dark:to-black duration-300`}>
