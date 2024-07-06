@@ -1,0 +1,129 @@
+'use client'
+import React, { FC, useState , useEffect} from 'react';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
+import { AiOutlineEye, AiOutlineEyeInvisible, AiFillGithub } from 'react-icons/ai';
+import { toast } from 'react-hot-toast';
+import { FcGoogle } from 'react-icons/fc';
+
+import { style } from '../../styles/style';
+import { useLoginMutation } from '@/redux/features/auth/authApi'
+import {signIn} from 'next-auth/react'
+
+type Props = {
+    setRoute: (route: string) => void;
+    setOpen:(open:boolean)=>void ;
+    refetch?:any
+};
+
+const schema = Yup.object().shape({
+    email: Yup.string().email('Invalid email').required('Please enter your email'),
+    password: Yup.string().min(8, 'Password must be at least 8 characters').required('Please enter your password'),
+});
+
+const Login: FC<Props> = ({ setRoute , setOpen , refetch }) => {
+    const [show, setShow] = useState(false);
+    const [login , {isSuccess , error }] = useLoginMutation()
+
+    const formik = useFormik({
+        initialValues: { email: "", password: "" },
+        validationSchema: schema,
+        onSubmit: async ({ email, password }) => {
+            await login({email , password})
+        }
+    });
+
+    useEffect(()=>{
+       if(isSuccess){
+        toast.success("Login SuccessFully")
+        setOpen(false)
+        refetch()
+       }
+       if(error){
+        if('data' in error){
+            const errorData = "Invalid Email and Password" ;
+            toast.error(errorData);
+        }
+       }
+    }, [isSuccess , error])
+
+    const { errors, touched, values, handleChange, handleSubmit } = formik;
+
+    return (
+
+        <div className='w-full p-4 !rounded-[2px] dark:text-white text-black sm:p-8 '>
+            <h1 className={style.title}>Login with Garuda Institute</h1>
+            <form onSubmit={handleSubmit}>
+                <label className={style.label} htmlFor='email'>
+                    Enter your email
+                </label>
+                <input
+                    type='email'
+                    name='email'
+                    value={values.email}
+                    onChange={handleChange}
+                    id='email'
+                    placeholder='login@gmail.com'
+                    className={`${errors.email && touched.email ? "border-red-500" : ""} ${style.input}`}
+                />
+                {errors.email && touched.email && (<span className="text-red-500 pt-2 block">{errors.email}</span>)}
+
+                <div className="w-full mt-5 relative mb-1">
+                    <label className={style.label} htmlFor='password'>
+                        Enter your password
+                    </label>
+                    <input
+                        type={!show ? "password" : "text"}
+                        name='password'
+                        value={values.password}
+                        onChange={handleChange}
+                        id='password'
+                        placeholder='password'
+                        className={`${errors.password && touched.password ? "border-red-500" : ""} ${style.input}`}
+                    />
+                    {!show ? (
+                        <AiOutlineEyeInvisible
+                            className='absolute bottom-3 right-2 z-1 cursor-pointer dark:text-white'
+                            size={20}
+                            onClick={() => setShow(true)}
+                        />
+                    ) : (
+                        <AiOutlineEye
+                            className='absolute bottom-3 right-2 z-1 cursor-pointer dark:text-white'
+                            size={20}
+                            onClick={() => setShow(false)}
+                        />
+                    )}
+                    {errors.password && touched.password && (<span className="text-red-500 pt-2 block">{errors.password}</span>)}
+                </div>
+
+                <div className="w-full mt-5">
+                    <input type="submit" value="Login" className={style.button} />
+                </div>
+                <br />
+                <h5 className="text-center dark:text-white pt-4 font-Poppins text-black">
+                    Or join with
+                </h5>
+                <div className="flex items-center justify-center my-3">
+                    <FcGoogle size={30} className="cursor-pointer mr-2"
+                    onClick={()=>signIn("google")}
+                    />
+                    <AiFillGithub size={30} className="cursor-pointer ml-2" 
+                    onClick={()=>signIn("github")}
+                    />
+                </div>
+                <h5 className="flex items-center justify-center my-2 text-[14px] font-Poppins dark:text-white">
+                Don't have an account?  
+                    <span className="text-[#2190ff] pl-1 cursor-pointer" onClick={() => setRoute("Sign-Up")}>
+                      Sign up
+                    </span>
+                </h5>
+                <br />
+            </form>
+        </div>
+   
+    )
+}
+
+
+export default Login;
