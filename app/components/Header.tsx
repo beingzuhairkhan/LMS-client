@@ -12,7 +12,7 @@ import { useSelector } from 'react-redux';
 import Image from 'next/image';
 import avt1 from '../../public/assets/avt1.jpeg';
 import { useSession } from 'next-auth/react';
-import { useSocialAuthMutation, useLogOutQuery } from '@/redux/features/auth/authApi';
+import { useSocialAuthMutation, useLogOutQuery } from '../../redux/features/auth/authApi';
 import { toast } from 'react-hot-toast';
 import {useLoadUserQuery} from "@/redux/features/api/apiSlice"
 type Props = {

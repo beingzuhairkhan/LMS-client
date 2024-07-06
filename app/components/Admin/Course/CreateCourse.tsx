@@ -7,7 +7,7 @@ import CourseOptions from './CourseOptions'
 import CourseData from './CourseData'
 import CourseContent from './CourseContent'
 import CoursePreview from './CoursePreview'
-import { useCreateCourseMutation } from '@/redux/features/courses/coursesAPI'
+import { useCreateCourseMutation } from '../../../../redux/features/courses/coursesAPI'
 import { toast } from 'react-hot-toast';
 import { redirect } from 'next/navigation'
 import Loader from '../../../components/Loader/Loader';

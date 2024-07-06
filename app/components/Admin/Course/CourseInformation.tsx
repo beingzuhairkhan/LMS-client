@@ -1,6 +1,6 @@
 import React, { FC, useState , useEffect } from 'react'
 import {style} from '../../../styles/style'
-import { useGetHeroDataQuery, useEditLayoutMutation } from '@/redux/features/layout/layoutApi';
+import { useGetHeroDataQuery, useEditLayoutMutation } from '../../../../redux/features/layout/layoutApi';
 type Props = {
     courseInfo: any;
     setCourseInfo: (courseInfo: any) => void;

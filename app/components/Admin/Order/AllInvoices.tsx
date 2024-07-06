@@ -1,9 +1,9 @@
 import React, { FC, useState, useEffect } from 'react';
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import { Box } from "@mui/material";
-import { useGetAllCoursesQuery } from "@/redux/features/courses/coursesAPI";
-import { useGetAllUsersQuery } from "@/redux/features/user/userApi";
-import { useGetAllOrdersQuery } from "@/redux/features/Orders/orderApi";
+import { useGetAllCoursesQuery } from "../../../../redux/features/courses/coursesAPI";
+import { useGetAllUsersQuery } from "../../../../redux/features/user/userApi";
+import { useGetAllOrdersQuery } from "../../../../redux/features/Orders/orderApi";
 import Loader from '../../Loader/Loader';
 import { format } from 'timeago.js';
 import { AiOutlineMail } from "react-icons/ai";

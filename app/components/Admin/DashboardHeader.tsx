@@ -4,7 +4,7 @@ import React, { FC, useState, useEffect } from "react";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import ThemeSwitcher from "@/app/utils/ThemeSwitcher";
 import socketIO from 'socket.io-client';
-import { useGetAllNotificationsQuery, useUpdateNotificationStatusMutation } from '@/redux/features/notification/notoficationApi';
+import { useGetAllNotificationsQuery, useUpdateNotificationStatusMutation } from '../../../redux/features/notification/notoficationApi';
 import { format } from 'timeago.js';
 
 const ENDPOINT = process.env.NEXT_PUBLIC_SOCKET_SERVER_URL || "";

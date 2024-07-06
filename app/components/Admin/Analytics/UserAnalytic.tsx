@@ -9,7 +9,7 @@ import {
   AreaChart,
   Area
 } from 'recharts';
-import { useGetUserAnalyticsQuery } from "@/redux/features/analtics/analyticsApi";
+import { useGetUserAnalyticsQuery } from "../../../../redux/features/analtics/analyticsApi";
 import Loader from '../../Loader/Loader';
 import { style } from '../../../styles/style';
 

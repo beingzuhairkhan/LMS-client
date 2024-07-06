@@ -1,8 +1,8 @@
 "use client";
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
-import { useGetAllCoursesQuery } from "@/redux/features/courses/coursesAPI";
-import { useGetHeroDataQuery } from '@/redux/features/layout/layoutApi';
+import { useGetAllCoursesQuery } from "../../redux/features/courses/coursesAPI";
+import { useGetHeroDataQuery } from '../../redux/features/layout/layoutApi';
 import Loader from "../components/Loader/Loader"
 import Header from '../components/Header';
 import Heading from '../utils/Heading';

@@ -8,10 +8,14 @@ import Courses from './components/Route/Courses'
 import Reviews from "./components/Route/Reviews"
 import FAQ from "./components/FAQ/FAQ"
 import Footer from "./components/Footer/Footer"
-import { useLoadUserQuery } from "@/redux/features/api/apiSlice"
-interface Props { }
+import { useLoadUserQuery } from "../redux/features/api/apiSlice"
+import Policy from './policy/Policy'
+import About from './about/About'
+import About2 from './components2/About2'
+import Tuitors from './components2/Tuitors'
+import Blog from './components2/Blog'
 
-const Page: FC<Props> = (props) => {
+const Page = () => {
   const [open, setOpen] = useState(false)
   const [activeItem, setActiveItem] = useState(0)
   const [route, setRoute] = useState("Login")
@@ -31,8 +35,13 @@ const Page: FC<Props> = (props) => {
         route={route}
       />
       <Hero />
+      <About/>
+      <About2/>
+      <Tuitors/>
       <Courses />
+      <Blog/>
       <Reviews />
+      <Policy/>
       <FAQ />
       <Footer />
 

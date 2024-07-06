@@ -30,6 +30,7 @@ const About = () => {
                     </div>
                 </p>
             </div>
+            <hr/>
         </div>
     );
 }

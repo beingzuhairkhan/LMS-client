@@ -1,5 +1,5 @@
 import React ,{FC , useState , useEffect} from 'react'
-import {useGetUsersAllCoursesQuery} from "@/redux/features/courses/coursesAPI"
+import {useGetUsersAllCoursesQuery} from "../../../redux/features/courses/coursesAPI"
 import CourseCard from "../Course/CourseCard"
 interface Course {
    id: string;

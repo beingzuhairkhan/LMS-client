@@ -9,7 +9,8 @@ import {
   YAxis,
   LabelList
 } from 'recharts';
-import { useGetCoursesAnalyticsQuery } from "@/redux/features/analtics/analyticsApi";
+import { useGetCoursesAnalyticsQuery } from "../../../../redux/features/analtics/analyticsApi";
+
 import Loader from '../../Loader/Loader';
 import { style } from '../../../styles/style';
 

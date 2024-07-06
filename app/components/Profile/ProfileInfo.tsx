@@ -3,8 +3,8 @@ import { FC, useState , useEffect} from "react";
 import { AiOutlineCamera } from "react-icons/ai";
 import avatarIcon from "../../../public/assets/avt1.jpeg"
 import {style} from "../../styles/style"
-import {useUpdateAvatarMutation , useEditProfileMutation} from "@/redux/features/user/userApi"
-import {useLoadUserQuery} from "@/redux/features/api/apiSlice"
+import {useUpdateAvatarMutation , useEditProfileMutation} from "../../../redux/features/user/userApi"
+import {useLoadUserQuery} from "../../../redux/features/api/apiSlice"
 import { toast } from 'react-hot-toast';
 type Props = {
   avatar: string | null;

@@ -5,8 +5,8 @@ import Heading from '../../utils/Heading';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer/Footer';
 import CourseDetails from '../../components/Course/CourseDetails';
-import { useGetCoursesDetailsQuery } from '@/redux/features/courses/coursesAPI';
-import {useGetStripePublishableKeyQuery , useCreatePaymentIntentMutation} from "@/redux/features/Orders/orderApi"
+import { useGetCoursesDetailsQuery } from '../../../redux/features/courses/coursesAPI';
+import {useGetStripePublishableKeyQuery , useCreatePaymentIntentMutation} from "../../../redux/features/Orders/orderApi"
 import {loadStripe} from '@stripe/stripe-js'
 
 type Props = {

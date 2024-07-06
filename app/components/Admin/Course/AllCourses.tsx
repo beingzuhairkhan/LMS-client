@@ -4,7 +4,7 @@ import { Box, Button, Modal } from "@mui/material";
 import { AiOutlineDelete } from "react-icons/ai";
 import { useTheme } from "next-themes";
 import { FiEdit2 } from "react-icons/fi";
-import { useGetAllCoursesQuery, useDeleteCourseMutation } from '@/redux/features/courses/coursesAPI'
+import { useGetAllCoursesQuery, useDeleteCourseMutation } from '../../../../redux/features/courses/coursesAPI'
 import Loader from '../../../components/Loader/Loader'
 import { format } from 'timeago.js'
 import { style } from '../../../styles/style'

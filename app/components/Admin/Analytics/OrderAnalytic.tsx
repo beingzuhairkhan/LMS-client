@@ -9,7 +9,7 @@ import {
   CartesianGrid,
   Legend,
 } from 'recharts';
-import { useGetOrderAnalyticsQuery } from '@/redux/features/analtics/analyticsApi'; // Double-check this import path
+import { useGetOrderAnalyticsQuery } from '../../../../redux/features/analtics/analyticsApi'; // Double-check this import path
 import Loader from '../../Loader/Loader';
 import { style } from '../../../styles/style'; // Double-check this import path
 

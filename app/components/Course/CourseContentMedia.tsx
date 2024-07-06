@@ -5,7 +5,7 @@ import { style } from '../../styles/style'
 import { AiFillStar, AiOutlineArrowLeft, AiOutlineArrowRight, AiOutlineStar } from 'react-icons/ai';
 import Image from 'next/image';
 import { toast } from 'react-hot-toast'
-import { useGetNewQuestionMutation, useAddAnswerInQuestionMutation, useAddReviewInCourseMutation, useGetCoursesDetailsQuery , useAddReplyInReviewMutation} from '@/redux/features/courses/coursesAPI'
+import { useGetNewQuestionMutation, useAddAnswerInQuestionMutation, useAddReviewInCourseMutation, useGetCoursesDetailsQuery , useAddReplyInReviewMutation} from '../../../redux/features/courses/coursesAPI'
 import { format } from 'timeago.js'
 import { BiMessage } from "react-icons/bi";
 import { VscVerifiedFilled } from 'react-icons/vsc';

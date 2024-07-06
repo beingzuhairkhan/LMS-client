@@ -8,7 +8,7 @@ import Loader from '../../../components/Loader/Loader'
 import { format } from 'timeago.js'
 import Link from 'next/link'
 import { style } from '../../../styles/style'
-import { useUpdateUserRoleMutation, useGetAllUsersQuery , useDeleteUserMutation } from '@/redux/features/user/userApi'
+import { useUpdateUserRoleMutation, useGetAllUsersQuery , useDeleteUserMutation } from '../../../../redux/features/user/userApi'
 import { toast } from 'react-hot-toast'
 type Props = {
   isTeam?: boolean

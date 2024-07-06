@@ -1,8 +1,8 @@
 import React, { FC, useState, useRef, useEffect } from 'react';
 import { toast } from 'react-hot-toast';
 import { useSelector } from 'react-redux';
-import { useActivationMutation } from '@/redux/features/auth/authApi';
-
+// import { useActivationMutation } from '@/redux/features/auth/authApi';
+import { useActivationMutation } from '../../../redux/features/auth/authApi';
 type Props = {
     setRoute: (route: string) => void;
 };

@@ -9,7 +9,7 @@ import {
   useGetCoursesAnalyticsQuery,
   useGetUserAnalyticsQuery,
   useGetOrderAnalyticsQuery,
-} from '@/redux/features/analtics/analyticsApi';
+} from '../../../../redux/features/analtics/analyticsApi';
 
 type Props = {
   open: boolean;

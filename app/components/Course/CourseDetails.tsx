@@ -11,7 +11,7 @@ import { style } from '../../styles/style'
 import CourseContentList from '../Course/CourseContentList'
 import { Elements } from '@stripe/react-stripe-js'
 import CheckOutForm from '../Payment/CheckOutForm'
-import { useLoadUserQuery } from "@/redux/features/api/apiSlice"
+import { useLoadUserQuery } from "../../../redux/features/api/apiSlice"
 import Image from 'next/image'
 import { VscVerifiedFilled } from 'react-icons/vsc';
 type Props = {

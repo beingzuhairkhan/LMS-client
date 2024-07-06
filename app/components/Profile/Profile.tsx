@@ -7,7 +7,7 @@ import { signOut } from 'next-auth/react';
 import { toast } from 'react-hot-toast';
 import ProfileInfo from './ProfileInfo';
 import ChangePassword from './ChangePassword';
-import { useGetUsersAllCoursesQuery } from '@/redux/features/courses/coursesAPI';
+import { useGetUsersAllCoursesQuery } from '../../../redux/features/courses/coursesAPI';
 import CourseCard from '../../components/Course/CourseCard';
 
 type Props = {

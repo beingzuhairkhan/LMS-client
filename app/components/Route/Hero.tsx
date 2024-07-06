@@ -2,7 +2,7 @@ import React, { FC, useState } from "react";
 import { BiSearch } from "react-icons/bi";
 import Image from 'next/image';
 import Link from 'next/link';
-import { useGetHeroDataQuery } from "@/redux/features/layout/layoutApi";
+import { useGetHeroDataQuery } from "../../../redux/features/layout/layoutApi";
 import Loader from "../Loader/Loader";
 import { useRouter } from "next/navigation";
 import Bot from "../../../public/assets/bot.png";

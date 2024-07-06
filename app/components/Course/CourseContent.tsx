@@ -1,6 +1,6 @@
 "use-client";
 import React , {FC , useState} from 'react'
-import {useGetCourseContentQuery} from "@/redux/features/courses/coursesAPI"
+import {useGetCourseContentQuery} from "../../../redux/features/courses/coursesAPI"
 import Loader from '../Loader/Loader'
 import Heading from '@/app/utils/Heading'
 import CourseContentMedia from './CourseContentMedia'

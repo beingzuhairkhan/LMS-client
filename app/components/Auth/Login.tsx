@@ -7,7 +7,8 @@ import { toast } from 'react-hot-toast';
 import { FcGoogle } from 'react-icons/fc';
 
 import { style } from '../../styles/style';
-import { useLoginMutation } from '@/redux/features/auth/authApi'
+// import { useLoginMutation } from '@/redux/features/auth/authApi'
+import { useLoginMutation } from "../../../redux/features/auth/authApi"
 import {signIn} from 'next-auth/react'
 
 type Props = {

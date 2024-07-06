@@ -1,7 +1,7 @@
 "use-client";
 import React, {FC,useState , useEffect} from 'react'
-import {useLoadUserQuery } from '@/redux/features/api/apiSlice'
-import {useCreateOrderMutation} from '@/redux/features/Orders/orderApi'
+import {useLoadUserQuery } from '../../../redux/features/api/apiSlice'
+import {useCreateOrderMutation} from '../../../redux/features/Orders/orderApi'
 import {useElements , useStripe , LinkAuthenticationElement , PaymentElement} from "@stripe/react-stripe-js"
 import {style} from '../../styles/style'
 import {toast} from 'react-hot-toast'
