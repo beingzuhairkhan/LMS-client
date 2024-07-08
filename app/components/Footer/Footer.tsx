@@ -67,7 +67,9 @@ const Footer = () => {
             {/* Contact Info Section */}
             <div className="space-y-3 dark:text-white text-black">
               <h3 className="text-lg font-semibold text-black dark:text-white ">Contact Info</h3>
-              <p className="text-base text-black dark:text-gray-300">Call Us: +91 7400216888</p>
+              <p className="text-base text-black dark:text-gray-300">
+  Call Us: <a href="tel:+917400216888" className="text-blue-500 underline-none">+91 7400216888</a>
+</p>
               <p className="text-base text-black dark:text-gray-300 ">Address: Gr floor Room Number 13:14, Hira Nandani, Samrat, Lallu Bhai Compound, near Shankar mandir, Mumbai, Maharashtra 400043</p>
               <p className="text-base text-black dark:text-gray-300 ">Mail Us: garudainstitute32@gmail.com</p>
             </div>

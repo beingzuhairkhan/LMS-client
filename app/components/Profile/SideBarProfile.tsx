@@ -56,7 +56,7 @@ const SideBarProfile: FC<Props> = ({ user, active, avatar, setActive, logOutHand
       )}
       <div
         className={`w-full flex items-center px-3 py-4 cursor-pointer ${active === 4 ? 'bg-slate-800' : 'bg-transparent'}`}
-        onClick={logOutHandler}
+        onClick={()=> logOutHandler()}
       >
         <AiOutlineLogout size={20} fill="#fff" />
         <h5 className="pl-2 800px:block hidden cursor-pointer font-Poppins">Log Out</h5>

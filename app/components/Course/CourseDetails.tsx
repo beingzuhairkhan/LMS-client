@@ -1,6 +1,7 @@
 'use-client'
 import React, { FC, useState , useEffect} from 'react'
-import Ratings from '@/app/utils/Ratings'
+// import Ratings from '../../app/utils/Ratings'
+import Ratings from "../../utils/Ratings"
 import { IoCheckmarkDoneOutline } from 'react-icons/io5'
 import { IoCloseOutline } from 'react-icons/io5'
 import { useSelector } from 'react-redux'

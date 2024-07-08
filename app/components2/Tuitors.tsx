@@ -5,6 +5,7 @@ import Image from 'next/image';
 const Tutors: React.FC = () => {
   return (
     <div className="p-6 dark:text-white text-black">
+         <hr className="mt-4 w-full mb-4" />
       <div className="max-w-7xl mx-auto flex flex-wrap items-center">
         {/* Left Side Content */}
         <div className="w-full md:w-1/2 pr-8 mb-8 md:mb-0">

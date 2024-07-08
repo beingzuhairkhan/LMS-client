@@ -14,7 +14,8 @@ import avt1 from '../../public/assets/avt1.jpeg';
 import { useSession } from 'next-auth/react';
 import { useSocialAuthMutation, useLogOutQuery } from '../../redux/features/auth/authApi';
 import { toast } from 'react-hot-toast';
-import {useLoadUserQuery} from "@/redux/features/api/apiSlice"
+// import {useLoadUserQuery} from "@/redux/features/api/apiSlice"
+import {useLoadUserQuery} from "../../redux/features/api/apiSlice"
 type Props = {
     open: boolean;
     setOpen: (open: boolean) => void;

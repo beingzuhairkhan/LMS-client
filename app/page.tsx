@@ -14,7 +14,7 @@ import About from './about/About'
 import About2 from './components2/About2'
 import Tuitors from './components2/Tuitors'
 import Blog from './components2/Blog'
-
+import Form from './admissionform/Form'
 const Page = () => {
   const [open, setOpen] = useState(false)
   const [activeItem, setActiveItem] = useState(0)
@@ -37,6 +37,7 @@ const Page = () => {
       <Hero />
       <About/>
       <About2/>
+      <Form/>
       <Tuitors/>
       <Courses />
       <Blog/>

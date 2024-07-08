@@ -59,9 +59,17 @@ const userApi = apiSlice.injectEndpoints({
         credentials: 'include' as const,
       }),
     }),
+    getForm: builder.mutation({
+      query: ({ name, email, phone, studentClass, stream, course, admissionSeeking }) => ({
+        url: 'admissionform',
+        method: 'POST',
+        body: { name, email, phone, studentClass, stream, course, admissionSeeking },
+        credentials: 'include',
+      }),
+    }),
     
   }),
 });
 
 // Export the generated hooks
-export const { useUpdateAvatarMutation, useEditProfileMutation , useUpdatePasswordMutation , useGetAllUsersQuery , useUpdateUserRoleMutation , useDeleteUserMutation} = userApi;
+export const { useUpdateAvatarMutation, useEditProfileMutation , useUpdatePasswordMutation , useGetAllUsersQuery , useUpdateUserRoleMutation , useDeleteUserMutation , useGetFormMutation} = userApi;

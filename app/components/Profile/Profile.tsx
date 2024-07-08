@@ -9,7 +9,8 @@ import ProfileInfo from './ProfileInfo';
 import ChangePassword from './ChangePassword';
 import { useGetUsersAllCoursesQuery } from '../../../redux/features/courses/coursesAPI';
 import CourseCard from '../../components/Course/CourseCard';
-
+import {useLogOutQuery} from '../../../redux/features/auth/authApi'
+import {redirect} from 'next/navigation'
 type Props = {
   user?: any;
   
@@ -22,6 +23,9 @@ const Profile: FC<Props> = ({ user }) => {
   const [logout, setLogout] = useState(false);
   const [courses, setCourses] = useState<any[]>([]);
   const { data, isLoading } = useGetUsersAllCoursesQuery(undefined, {});
+  const {} = useLogOutQuery(undefined , {
+    skip: !logout ? true : false
+  });
   const router = useRouter();
 
   useEffect(() => {
@@ -53,23 +57,26 @@ const Profile: FC<Props> = ({ user }) => {
     }
   }, []);
   
-  const logOutHandler = () => {
+  const logOutHandler =async () => {
     setLogout(true);
+    await signOut()
+    console.log("Logout successfull")
+    
   };
 
-  useEffect(() => {
-    const handleLogout = async () => {
-      if (logout) {
-        await signOut({ redirect: false });
-        toast.success('Logout successfully');
-        router.push('/');
-        setLogout(false); // Reset the logout state
-      }
+  // useEffect(() => {
+  //   const handleLogout = async () => {
+  //     if (logout) {
+  //       await signOut({ redirect: false });
+  //       toast.success('Logout successfully');
+  //       setLogout(false); // Reset the logout state
+  //       router.push('/');
+  //     }
       
-    };
+  //   };
 
-    handleLogout();
-  }, [logout]);
+  //   handleLogout();
+  // }, [logout]);
 
   return (
     <div className="w-[85%] flex mx-auto mt-[-80px]">

@@ -2,7 +2,7 @@
 import React , {FC , useState} from 'react'
 import {useGetCourseContentQuery} from "../../../redux/features/courses/coursesAPI"
 import Loader from '../Loader/Loader'
-import Heading from '@/app/utils/Heading'
+import Heading from "../../utils/Heading"
 import CourseContentMedia from './CourseContentMedia'
 import Header from '../Header'
 import CourseContentList from './CourseContentList'

@@ -6,7 +6,7 @@ import { useGetHeroDataQuery } from "../../../redux/features/layout/layoutApi";
 import Loader from "../Loader/Loader";
 import { useRouter } from "next/navigation";
 import Bot from "../../../public/assets/bot.png";
-import Banner from '../../../public/assets/banner.svg';
+import Banner from '../../../public/assets/Banner2.png';
 
 type Props = {};
 
@@ -27,11 +27,12 @@ const Hero: FC<Props> = (props) => {
     <section className="hero flex flex-col lg:flex-row items-center justify-between overflow-hidden scroll-smooth">
       <div className="hero-image rounded-full lg:rounded-none overflow-hidden relative lg:w-[650px] lg:h-[650px] lg:pl-5 md:w-[50%] w-full sm:p-2">
         <Image
-          src={data?.layout?.banner?.image?.url || Banner}
-          width={400}
-          height={400}
+          // src={data?.layout?.banner?.image?.url || Banner}
+          src={Banner}
+          width={800}
+          height={800}
           alt="Banner Image"
-          className="object-contain w-full h-full sm:mt-4 sm:p-4"
+          className="animate-pulse object-contain w-full h-full sm:mt-4 sm:p-4"
         />
       </div>
 

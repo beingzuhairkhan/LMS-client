@@ -1,5 +1,6 @@
 'use client'
-import { style } from '@/app/styles/style';
+// import { style } from '@/app/styles/style';
+import { style } from "../../styles/style"
 import React, { FC, useState, useEffect } from 'react';
 import { useUpdatePasswordMutation } from "../../../redux/features/user/userApi";
 import { toast } from 'react-hot-toast';
