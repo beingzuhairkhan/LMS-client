@@ -98,7 +98,7 @@ const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute }) => {
                     <div className="w-full h-[80px] flex items-center justify-between p-3">
                         <div>
                             <Link href="/" className="text-[25px] font-Poppins font-medium text-black dark:text-white">
-                                Garuda Institute
+                               <span className="text-gradient" >Garuda</span> Institute
                             </Link>
                         </div>
                         <div className='flex items-center'>

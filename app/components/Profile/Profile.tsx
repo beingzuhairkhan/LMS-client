@@ -61,6 +61,7 @@ const Profile: FC<Props> = ({ user }) => {
     setLogout(true);
     await signOut()
     console.log("Logout successfull")
+    redirect("/")
     
   };
 

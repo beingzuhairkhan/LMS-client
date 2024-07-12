@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const Tutors: React.FC = () => {
   return (
-    <div className="p-6 dark:text-white text-black">
+    <div className="p-6 dark:text-white text-black text-justify w-full">
          <hr className="mt-4 w-full mb-4" />
       <div className="max-w-7xl mx-auto flex flex-wrap items-center">
         {/* Left Side Content */}

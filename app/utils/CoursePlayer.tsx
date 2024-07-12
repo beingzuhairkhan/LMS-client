@@ -15,7 +15,7 @@ const CoursePlayer: FC<Props> = ({ videoUrl, title }) => {
     useEffect(() => {
         if (videoUrl) {
             console.log('Sending request with videoUrl:', videoUrl);
-             axios.post("https://lms-server-3q7x.onrender.com/api/v1/getVdoCipherOTP", {
+             axios.post("https://lms-server-5-ebgp.onrender.com/api/v1/getVdoCipherOTP", {
                 videoId: videoUrl,
             }, {
                 headers: {
