@@ -15,10 +15,10 @@ const Footer = () => {
               <h3 className="text-lg font-semibold text-black dark:text-white">About</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link href="/about" className="text-base text-black dark:text-gray-300 ">Our Story</Link>
+                  <Link href="/about" className="text-base text-black dark:text-gray-300">Our Story</Link>
                 </li>
                 <li>
-                  <Link href="/policy" className="text-base text-black dark:text-gray-300 ">Privacy Policy</Link>
+                  <Link href="/policy" className="text-base text-black dark:text-gray-300">Privacy Policy</Link>
                 </li>
                 <li>
                   <Link href="/faq" className="text-base text-black dark:text-gray-300">FAQ</Link>
@@ -31,7 +31,7 @@ const Footer = () => {
               <h3 className="text-lg font-semibold text-black dark:text-white">Quick Links</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link href="/courses" className="text-base text-black dark:text-gray-300 ">Courses</Link>
+                  <Link href="/courses" className="text-base text-black dark:text-gray-300">Courses</Link>
                 </li>
                 <li>
                   <Link href="/profile" className="text-base text-black dark:text-gray-300">My Account</Link>
@@ -52,7 +52,7 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link href="https://www.instagram.com/garuda_institute/" className="text-base text-black dark:text-gray-300 ">
+                  <Link href="https://www.instagram.com/garuda_institute/" className="text-base text-black dark:text-gray-300">
                     <AiFillInstagram className="inline-block h-6 w-6" /> Instagram
                   </Link>
                 </li>
@@ -66,12 +66,29 @@ const Footer = () => {
 
             {/* Contact Info Section */}
             <div className="space-y-3 dark:text-white text-black">
-              <h3 className="text-lg font-semibold text-black dark:text-white ">Contact Info</h3>
+              <h3 className="text-lg font-semibold text-black dark:text-white">Contact Info</h3>
               <p className="text-base text-black dark:text-gray-300">
-  Call Us: <a href="tel:+917400216888" className="text-blue-500 underline-none">+91 7400216888</a>
-</p>
-              <p className="text-base text-black dark:text-gray-300 ">Address: Gr floor Room Number 13:14, Hira Nandani, Samrat, Lallu Bhai Compound, near Shankar mandir, Mumbai, Maharashtra 400043</p>
-              <p className="text-base text-black dark:text-gray-300 ">Mail Us: garudainstitute32@gmail.com</p>
+                Call Us: <a href="tel:+917400216888" className="text-blue-500 underline-none">+91 7400216888</a>
+              </p>
+              <p className="text-base text-black dark:text-gray-300">Address: Gr floor Room Number 13:14, Hira Nandani, Samrat, Lallu Bhai Compound, near Shankar mandir, Mumbai, Maharashtra 400043</p>
+              <p className="text-base text-black dark:text-gray-300">Mail Us: garudainstitute32@gmail.com</p>
+            </div>
+
+            {/* Map Section */}
+            <div className="space-y-3 dark:text-white text-black">
+              <h3 className="text-lg font-semibold text-black dark:text-white">Our Location</h3>
+              <div className="w-full h-64">
+                <iframe
+                  src="https://maps.google.com/maps?q=Hira%20Nandani,%20Samrat,%20Lallu%20Bhai%20Compound,%20near%20Shankar%20mandir,%20Mumbai,%20Maharashtra%20400043&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                  width="100%"
+                  height="100%"
+                  frameBorder="0"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  aria-hidden="false"
+                  tabIndex={0}
+                ></iframe>
+              </div>
             </div>
 
           </div>
